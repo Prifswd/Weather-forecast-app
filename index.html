@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="icon" href="./favicon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 text-gray-800 p-6"
+  >
+    <div class="max-w-5xl mx-auto space-y-6">
+      <!-- error message -->
+      <div
+        id="errorMessage"
+        class="hidden bg-red-100 border border-red-300 text-red-800 px-4 py-2 rounded-md text-sm"
+      ></div>
+
+      <h1 class="text-3xl font-bold text-center text-green-700">
+        🌤️ Weather Forecast
+      </h1>
+
+      <!-- input and location buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-between items-center">
+        <!-- search input with button -->
+        <div class="flex gap-2 w-full sm:w-auto">
+          <!-- input for city name -->
+          <input
+            id="cityInput"
+            type="text"
+            placeholder="Enter city name"
+            class="border p-3 rounded-md w-full sm:w-72 text-sm"
+          />
+
+          <!-- search button -->
+          <button
+            id="searchBtn"
+            class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+          >
+            Search
+          </button>
+        </div>
+
+        <!-- button for user's current location -->
+        <button
+          id="locationBtn"
+          class="text-sm bg-green-100 text-green-800 px-4 py-2 rounded-md hover:bg-green-200"
+        >
+          📍 Use My Location
+        </button>
+
+        <!-- dropdown for recently searched cities -->
+        <select id="recentCities" class="border p-2 rounded-md text-sm hidden">
+          <option disabled selected>Recent Cities</option>
+        </select>
+      </div>
+
+      <!-- container for current weather info -->
+      <div id="weatherDisplay"></div>
+
+      <!-- container for 5-day weather forecast -->
+      <div id="forecastDisplay" class="mt-4"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
